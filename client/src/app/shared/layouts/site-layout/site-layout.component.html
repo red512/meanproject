@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+</html>
+
+
+<ul class="sidenav sidenav-fixed a-sidenav">
+  <h4>TM1CRM</h4>
+  <li
+    class="bold"
+    *ngFor="let link of links"
+    routerLinkActive="active"
+  >
+    <a [routerLink]="[link.url]" class="waves-effect waves-orange">
+      {{link.name}}
+    </a>
+  </li>
+
+
+  <br>
+  <br>
+  <br>
+  <li class="center-align">
+    v0.001
+  </li>
+
+  <li class="bold last">
+    <a href="#" class="waves-effect waves-orange" (click)="logout($event)">Exit</a>
+  </li>
+</ul>
+
+<main class="content min-width">
+  <router-outlet></router-outlet>
+</main>
+
+<div class="fixed-action-btn" #floating>
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">add</i>
+  </a>
+  <ul>
+    <li>
+      <a class="btn-floating green" routerLink="/order">
+        <i class="material-icons">assignment</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating blue" routerLink="/categories/new">
+        <i class="material-icons">list</i>
+      </a>
+    </li>  </ul>
+</div>
+
